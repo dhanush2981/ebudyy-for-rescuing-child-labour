@@ -1,0 +1,84 @@
+{%include "uheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+	<script language="javascript" type="text/javascript">
+
+function popitup(url) {
+	newwindow=window.open(url,'name','height=350,width=400');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+</script>
+</head>
+
+				<div class="page-title">
+					<div class="container">
+						<h2>Complaints Status Check</h2>
+					</div>
+				</div>
+			</header>
+		</div>
+
+<div class="fullwidth-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+<table id="customers">
+  <tr>
+
+    <th>Name</th>
+	  <th>Number</th>
+	    <th>Address</th>
+	    <th>Child_Gender</th>
+    <th>Child_Age&nbsp;</th>
+	   <th>Photo</th>
+	   <th>Status</th>
+
+  </tr>
+{%  for data in detailes1 %}
+	<tr><td><strong>{{data[1]}}</strong></td>
+		<td><strong>{{data[2]}}</strong></td>
+		<td><strong>{{data[3]}}</strong></td>
+
+		<td><strong>{{data[5]}}</strong></td>
+		<td><strong>{{data[6]}}</strong></td>
+
+<td><img src="{{ url_for('static',filename=data[4])}}" width="70" height="70"></td>
+
+        <td><strong>{{data[7]}}</strong></td>
+
+		</tr>
+{% endfor %}
+</table>
+						</div>
+						<br>
+					</div>
+				</div>
+</div>
+
+	<br><br><br><br>
+{%include "footer.html" %}

@@ -1,0 +1,79 @@
+{%include "uheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+
+				<div class="page-title">
+					<div class="container">
+						<h2>Search Missing Child</h2>
+					</div>
+				</div>
+			</header>
+		</div>
+
+<div class="fullwidth-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+
+
+<table id="customers">
+  <tr>
+    <th>Searching Photo</th>
+    <th>Matching Found</th>
+  </tr>
+ <tr>
+
+    <td align ="center" > <img src="data:image/jpg;base64,{{ img_data  }}" width="120" height="120" alt=""></td>
+    <td align ="center" > <img src="data:image/jpg;base64,{{ img_data2 }}" width="120" height="120" alt=""></td>
+  </tr>
+	<tr><td><strong>Child Name</strong></td><td><strong>{{list[0]}}</strong></td></tr>
+		<tr><td><strong>City</strong></td><td><strong>{{list[1]}}</strong></td></tr>
+		<tr><td><strong>Landmarks</strong></td><td><strong>{{list[2]}}</strong></td></tr>
+		<tr><td><strong>Remarks</strong></td><td><strong>{{list[3]}}</strong></td></tr>
+	<tr><td><strong>Uploaded by </strong></td><td><strong>{{list[4]}}</strong></td></tr>
+		<tr><td><strong>Contact Number</strong></td><td><strong>{{list[5]}}</strong></td></tr>
+
+
+
+</table>
+						</div>
+						<br>
+
+
+
+					</div>
+
+				</div>
+
+</div>
+
+
+
+	<br>		<br>
+
+{%include "footer.html" %}

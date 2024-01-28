@@ -1,0 +1,86 @@
+{%include "uheader.html" %}
+<head>
+
+	<style>
+.alert {
+  padding: 10px;
+  background-color:#04AA6D ;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+
+</head>
+
+				<div class="page-title">
+					<div class="container">
+						<h2>Upload Photos</h2>
+					</div>
+				</div>
+			</header>
+		</div>
+
+<div class="fullwidth-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+							 {% if message %}
+
+           <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			    <strong>{{message}}</strong>
+</div>
+    {% endif %}
+
+							<div class="boxed-section request-form">
+								<h2 class="section-title text-center">Upload Photos</h2>
+								<form action="{{ url_for('uupload_photo2')}}" method="post" enctype="multipart/form-data">
+									<p>
+									<label for="name">Adress</label>
+									<span class="control"><input type="text" id="name"  name="adrs" required></span>
+								</p>
+
+										<p>
+									<label for="message">Upload Picture</label>
+										<span class="control"><input type="file"   id="website" name="file"  required></span>
+								</p>
+									<p class="text-right">
+									<input type="submit" value="Upload">
+								</p>
+								</form>
+
+							</div> <!-- .boxed-section .request-form -->
+
+						</div>
+						<br>		<br>		<br>		<br>
+
+								<center><a href="#"><img src="{{ url_for('static',filename='images/upload.png')}}" width="300" height="300" alt="student 1"></a></li>
+
+	</center>
+
+					</div>
+
+				</div>
+
+</div>
+
+
+
+
+
+{%include "footer.html" %}

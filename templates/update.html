@@ -1,0 +1,72 @@
+{%include "aheader.html" %}
+<head>
+	<style>
+.alert {
+  padding: 10px;
+  background-color:#78281F ;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+
+</head>
+				<div class="page-title">
+					<div class="container">
+						<h2>Complaint Updating </h2>
+					</div>
+				</div>
+			</header>
+		</div>
+<div class="fullwidth-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							 {% if messages %}
+           <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			    <strong>{{messages}}</strong>
+</div>
+    {% endif %}
+							<div class="boxed-section request-form">
+								<h2 class="section-title text-center">Complaint Updating </h2>
+								{% if detailes %}
+								<form action="{{ url_for('update2')}}" method="post">
+									<input type="hidden" name="sno" placeholder="productname" value="{{detailes[0][0]}}"><br>
+									<p>
+									<label for="name"> Status</label>
+                                        <select name="status"  class="form-control input-sm" required>
+                                            <option value="">Select</option>
+								<option value="Processing" >Processing
+											<option value="Verified">Verified
+								<option value="Completed">Closed
+							</select>
+                                    </p>
+									<p class="text-right">
+									<input type="submit" value="Submit">
+								</p>
+							</form>
+								 {%endif%}
+							</div> <!-- .boxed-section .request-form -->
+						</div>
+						<br>
+								<center><a href="#"><img src="{{ url_for('static',filename='images/adminn.png')}}" width="256" height="256" alt="student 1"></a></li>
+	</center>
+					</div>
+				</div>
+</div>
+
+{%include "footer.html" %}

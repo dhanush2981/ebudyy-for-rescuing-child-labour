@@ -1,0 +1,92 @@
+{%include "header.html" %}
+<head>
+
+	<style>
+.alert {
+  padding: 10px;
+  background-color:#04AA6D ;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+
+</head>
+
+				<div class="page-title">
+					<div class="container">
+						<h2>Users</h2>
+					</div>
+				</div>
+			</header>
+		</div>
+
+<div class="fullwidth-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+    {% if messages %}
+
+           <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			    <strong>{{messages}}</strong>
+</div>
+    {% endif %}
+
+     {% if msg %}
+		<script>alert('Registered Successfully..! Login Here.')</script>
+    {% endif %}
+
+
+							<div class="boxed-section request-form">
+								<h2 class="section-title text-center">User Login</h2>
+								<form action="{{ url_for('userlogin')}}" method="post">
+									<div class="field">
+										<label for="email">User ID:</label>
+										<div class="control"><input type="text" id="email" name="unm" placeholder="User ID" required></div>
+									</div>
+									<div class="field">
+										<label for="name">Password:</label>
+										<div class="control"><input type="password" id="name" name="pwd" placeholder="Password" required></div>
+									</div>
+									<div class="field no-label">
+										<div class="control">
+											<input type="submit" class="button" value="Login">
+										</div>
+									</div>
+								</form>
+<a href="{{url_for('user_reg')}}" class="button">Registering</a>
+							</div> <!-- .boxed-section .request-form -->
+
+						</div>
+						<br><br>
+
+								<center><a href="#"><img src="{{ url_for('static',filename='images/user_group.png')}}" width="300" height="300" alt="student 1"></a></li>
+
+	</center>
+
+					</div>
+
+				</div>
+
+</div>
+
+
+
+
+
+{%include "footer.html" %}

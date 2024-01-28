@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Ebuddy for rescue child labour</title>
+		<!-- Loading third party fonts -->
+
+		<link href="{{ url_for('static',filename='fonts/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}" type="text/css">
+		
+		<!--[if lt IE 9]>
+		<script src="{{ url_for('static',filename='js/ie-support/html5.js')}}"></script>
+		<script src="{{ url_for('static',filename='js/ie-support/respond.js')}}"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="primary-header">
+					<div class="container">
+						<a href="{{ url_for('index') }}" id="branding">
+							<img src="{{ url_for('static',filename='images/logo.png')}}" width="58" height="58" alt="Lincoln high School">
+							<h1 class="site-title">Ebuddy for rescue child labour</h1>
+						</a> <!-- #branding -->
+						
+						<div class="main-navigation">
+							<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+							<ul class="menu">
+								<li class="menu-item"><a href="{{ url_for('index') }}">Home</a></li>
+								<li class="menu-item"><a href="{{ url_for('ngo') }}">NGO</a></li>
+								<li class="menu-item"><a href="{{ url_for('users') }}">Users</a></li>
+
+							</ul> <!-- .menu -->
+						</div> <!-- .main-navigation -->
+
+						<div class="mobile-navigation"></div>
+					</div> <!-- .container -->
+				</div> <!-- .primary-header -->
+
+				<div class="home-slider">
+					<div class="container">
+						<div class="slider">
+							<ul class="slides">
+								<li>
+									<div class="slide-caption">
+										<h2 class="slide-title">Ebuddy For Rescue Child Labour<br>Using Deep Learning</h2>
+
+									</div><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+									<img src="{{ url_for('static',filename='images/fr2.png')}}" width="300" alt="">
+								</li>
+								<li>
+									<div class="slide-caption">
+													<h2 class="slide-title">Ebuddy For Rescue Child Labour<br>Using Deep Learning</h2>
+									</div><br>&nbsp;&nbsp;
+									<img src="{{ url_for('static',filename='images/img2.png')}}"  width="300" alt="">
+								</li>
+								<li>
+									<div class="slide-caption">
+															<h2 class="slide-title">Ebuddy For Rescue Child Labour<br>Using Deep Learning</h2>
+									</div><br>&nbsp;&nbsp;
+									<img src="{{ url_for('static',filename='images/fr.png')}}"  width="300"alt="">
+								</li>
+							</ul> <!-- .slides -->
+						</div> <!-- .slider -->
+					</div> <!-- .container -->
+				</div> <!-- .home-slider -->
+			</header>
+		</div>
+
+
+		<script src="{{ url_for('static',filename='js/jquery-1.11.1.min.js')}}"></script>
+		<script src="{{ url_for('static',filename='js/plugins.js')}}/"></script>
+		<script src="{{ url_for('static',filename='js/app.js')}}"></script>
+		
+	</body>
+
+</html>
